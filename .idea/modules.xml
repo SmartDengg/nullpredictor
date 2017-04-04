@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NotNullPredict.iml" filepath="$PROJECT_DIR$/NotNullPredict.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aspect-processor/aspect-processor.iml" filepath="$PROJECT_DIR$/aspect-processor/aspect-processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" filepath="$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" />
+    </modules>
+  </component>
+</project>
