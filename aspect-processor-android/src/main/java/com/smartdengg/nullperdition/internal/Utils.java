@@ -5,7 +5,12 @@ import com.smartdengg.nullperdition.processor.NotNullAspect;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
+import java.lang.reflect.Array;
+import java.lang.reflect.GenericArrayType;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
+import java.lang.reflect.WildcardType;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -29,24 +34,61 @@ public class Utils {
 
   public static <T extends Annotation> T getAnnotationByType(final Annotation[] annotations,
       final Class<T> type) {
-    if (annotations == null) return null;
-    T result = null;
+    if (annotations == null || annotations.length == 0) return null;
     for (final Annotation annotation : annotations) {
       if (type.isAssignableFrom(annotation.getClass())) {
-        result = type.cast(annotation);
-        break;
+        return type.cast(annotation);
       }
     }
-    return result;
+    return null;
   }
 
-  public static <T extends Annotation> T getAnnotationByType(Method method, Class<T> type) {
-    return method.getAnnotation(type);
+  public static Class<?> getRawType(Type type) {
+    if (type == null) throw new NullPointerException("type == null");
+
+    if (type instanceof Class<?>) {
+      // Type is a normal class.
+      return (Class<?>) type;
+    }
+    if (type instanceof ParameterizedType) {
+      ParameterizedType parameterizedType = (ParameterizedType) type;
+
+      // I'm not exactly sure why getRawType() returns Type instead of Class. Neal isn't either but
+      // suspects some pathological case related to nested classes exists.
+      Type rawType = parameterizedType.getRawType();
+      if (!(rawType instanceof Class)) throw new IllegalArgumentException();
+      return (Class<?>) rawType;
+    }
+    if (type instanceof GenericArrayType) {
+      Type componentType = ((GenericArrayType) type).getGenericComponentType();
+      return Array.newInstance(getRawType(componentType), 0).getClass();
+    }
+    if (type instanceof TypeVariable) {
+      // We could use the variable's bounds, but that won't work if there are multiple. Having a raw
+      // type that's more general than necessary is okay.
+      return Object.class;
+    }
+    if (type instanceof WildcardType) {
+      return getRawType(((WildcardType) type).getUpperBounds()[0]);
+    }
+
+    throw new IllegalArgumentException("Expected a Class, ParameterizedType, or "
+        + "GenericArrayType, but <"
+        + type
+        + "> is of type "
+        + type.getClass().getName());
+  }
+
+  public static Object arrayToInstance(Class<?> returnType) {
+    Class<?> componentType = returnType.getComponentType();
+    if (componentType.isArray()) {
+      componentType = arrayToInstance(componentType).getClass();
+    }
+    return Array.newInstance(componentType, new int[] { 0 });
   }
 
   public static String getStackTraceString(Throwable tr) {
     if (tr == null) return "";
-
     StringWriter sw = new StringWriter(256);
     PrintWriter pw = new PrintWriter(sw, false);
     tr.printStackTrace(pw);

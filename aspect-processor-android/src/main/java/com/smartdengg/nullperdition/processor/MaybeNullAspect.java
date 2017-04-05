@@ -1,10 +1,10 @@
 package com.smartdengg.nullperdition.processor;
 
 import android.util.Log;
-import com.smartdengg.nullperdition.internal.Utils;
 import com.smartdengg.nullperdition.annotation.MaybeNull;
 import com.smartdengg.nullperdition.error.NullError;
 import com.smartdengg.nullperdition.error.UnSupportReturnTypeError;
+import com.smartdengg.nullperdition.internal.Utils;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,6 +16,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
+import static com.smartdengg.nullperdition.internal.Utils.arrayToInstance;
 import static com.smartdengg.nullperdition.internal.Utils.getCurrentStackTrace;
 import static com.smartdengg.nullperdition.internal.Utils.getExceptionStackTrace;
 
@@ -84,16 +85,12 @@ import static com.smartdengg.nullperdition.internal.Utils.getExceptionStackTrace
           Log.e(TAG, Utils.getStackTraceString(error));
         }
 
+        if (returnType.isArray()) return arrayToInstance(returnType);
+
         if (returnType.isPrimitive()) {
           throw new UnSupportReturnTypeError(
               MessageFormat.format("{0} return type is primitive", instanceName), null,
               getCurrentStackTrace());
-        }
-
-        if (returnType.isArray() && returnType.getComponentType().isPrimitive()) {
-          throw new UnSupportReturnTypeError(
-              MessageFormat.format("{0} return type isArray and componentType is primitive",
-                  instanceName), null, getCurrentStackTrace());
         }
 
         return null;
