@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/aspect-processor" />
             <option value="$PROJECT_DIR$/aspect-processor-android" />
+            <option value="$PROJECT_DIR$/predictor-plugin" />
+            <option value="$PROJECT_DIR$/predictor-runtime" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

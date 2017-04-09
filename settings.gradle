@@ -1,1 +1,2 @@
-include ':app', ':aspect-processor', ':aspect-processor-android'
+include ':app', ':aspect-processor', ':aspect-processor-android', ':predictor-runtime',
+    ':predictor-plugin'

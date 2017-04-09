@@ -1,9 +1,11 @@
 package com.smartdengg.notnullpredict;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import com.smartdengg.nullperdition.annotation.MaybeNull;
 import com.smartdengg.nullperdition.annotation.NotNull;
 import java.lang.reflect.Proxy;
@@ -33,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
     testNotNull(1, "hello world", null, null, null, null, null, null, new Entity());
 
     //checkNullBeforeMethod(null, null);
+
+    final ViewGroup viewById = (ViewGroup) findViewById(R.id.layout);
+    viewById.setEnabled(true);
+
+    new Handler().postDelayed(new Runnable() {
+      @Override public void run() {
+        for (int i = 0, n = viewById.getChildCount(); i < n; i++) {
+          viewById.getChildAt(i).setEnabled(false);
+        }
+      }
+    }, 2000);
   }
 
   //@NotNull(debug = true)

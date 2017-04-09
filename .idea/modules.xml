@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/aspect-processor/aspect-processor.iml" filepath="$PROJECT_DIR$/aspect-processor/aspect-processor.iml" />
       <module fileurl="file://$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" filepath="$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/predictor-plugin/predictor-plugin.iml" filepath="$PROJECT_DIR$/predictor-plugin/predictor-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/predictor-runtime/predictor-runtime.iml" filepath="$PROJECT_DIR$/predictor-runtime/predictor-runtime.iml" />
     </modules>
   </component>
 </project>
