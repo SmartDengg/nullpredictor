@@ -2,8 +2,8 @@ package com.smartdengg.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import com.smartdengg.nullpredictor.annotation.MaybeNull;
-import com.smartdengg.nullpredictor.annotation.NotNull;
+import com.smartdengg.nullpredictor.MaybeNull;
+import com.smartdengg.nullpredictor.NotNull;
 
 public class MainActivity extends AppCompatActivity {
 
