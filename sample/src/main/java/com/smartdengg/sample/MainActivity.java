@@ -12,10 +12,21 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     testNotNull(0, null, null);
+
+    Inner inner = new Inner(null);
   }
 
   @NotNull(debug = false)
   private void testNotNull(int i, String text, @MaybeNull(loggable = true) Callback callback) {
     callback.test();
+  }
+
+  private static class Inner {
+
+    Callback callback;
+
+    @com.smartdengg.nullpredictor.NotNull Inner(Callback callback) {
+      this.callback = callback;
+    }
   }
 }

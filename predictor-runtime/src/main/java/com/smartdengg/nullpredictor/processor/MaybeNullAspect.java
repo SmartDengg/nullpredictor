@@ -87,7 +87,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
 
         if (returnType.isArray()) return arrayToInstance(returnType);
 
-        if (!(returnType == Void.class) && returnType.isPrimitive()) {
+        if (returnType.isPrimitive() && returnType != Void.TYPE) {
           throw new UnSupportReturnTypeError(
               MessageFormat.format("{0} return type is primitive", instanceName), null,
               getCurrentStackTrace());

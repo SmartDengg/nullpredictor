@@ -27,7 +27,7 @@ class NullPredictorPlugin implements Plugin<Project> {
     }
 
     project.dependencies {
-      debugCompile 'com.github.SmartDengg:NotNullPredictor:0.0.2'
+      debugCompile 'com.github.SmartDengg:NotNullPredictor:0.2.1'
       debugCompile 'org.aspectj:aspectjrt:1.8.8'
     }
 
