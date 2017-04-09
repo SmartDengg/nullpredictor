@@ -1,7 +1,7 @@
 package com.smartdengg.nullpredictor.internal;
 
-import com.smartdengg.nullperdition.processor.MaybeNullAspect;
-import com.smartdengg.nullperdition.processor.NotNullAspect;
+import com.smartdengg.nullpredictor.processor.MaybeNullAspect;
+import com.smartdengg.nullpredictor.processor.NotNullAspect;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.annotation.Annotation;
