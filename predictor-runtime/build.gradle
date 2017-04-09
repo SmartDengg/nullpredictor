@@ -6,6 +6,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.SmartDengg'
+//artifact = 'NotNullPredictor'
+version = '1.0.0'
 
 android {
   compileSdkVersion 25
