@@ -1,6 +1,6 @@
 package com.smartdengg.nullpredictor.processor;
 
-import com.smartdengg.nullpredictor.annotation.NotNull;
+import com.smartdengg.nullpredictor.NotNull;
 import com.smartdengg.nullpredictor.error.NullError;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;

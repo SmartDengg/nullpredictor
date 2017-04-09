@@ -1,7 +1,7 @@
 package com.smartdengg.nullpredictor.processor;
 
 import android.util.Log;
-import com.smartdengg.nullpredictor.annotation.MaybeNull;
+import com.smartdengg.nullpredictor.MaybeNull;
 import com.smartdengg.nullpredictor.error.NullError;
 import com.smartdengg.nullpredictor.error.UnSupportReturnTypeError;
 import com.smartdengg.nullpredictor.internal.Utils;
@@ -32,7 +32,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
   private MaybeNullAspect() {
   }
 
-  @Pointcut("execution(* *(.., @com.smartdengg.nullpredictor.annotation.MaybeNull (*), ..))")
+  @Pointcut("execution(* *(.., @com.smartdengg.nullpredictor.MaybeNull (*), ..))")
   public void parameterWithMaybeNull() {
   }
 
