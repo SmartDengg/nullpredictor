@@ -1,2 +1,3 @@
-include ':app', ':aspect-processor', ':aspect-processor-android', ':predictor-runtime',
+include ':app', ':aspect-processor-android', ':predictor-runtime', ':sample',
+    ':nullpredictor-annotation',
     ':predictor-plugin'
