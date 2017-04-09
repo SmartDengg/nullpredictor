@@ -27,7 +27,7 @@ class NullPredictorPlugin implements Plugin<Project> {
     }
 
     project.dependencies {
-//      compile 'com.github.SmartDengg.nullpredictor:predictor-runtime:0.3.0'
+      compile project(':predictor-runtime')
       compile 'org.aspectj:aspectjrt:1.8.8'
     }
 
