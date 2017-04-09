@@ -19,7 +19,7 @@ android {
 
 dependencies {
   compile 'org.aspectj:aspectjrt:1.8.8'
-  provided 'com.github.SmartDengg.nullpredictor:nullpredictor-annotations:0.1.2'
+  provided 'com.github.SmartDengg.nullpredictor:nullpredictor-annotations:0.3.0'
 }
 
 android.libraryVariants.all { variant ->
