@@ -10,7 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/aspect-processor-android" />
-            <option value="$PROJECT_DIR$/nullpredictor-annotation" />
+            <option value="$PROJECT_DIR$/nullpredictor-annotations" />
             <option value="$PROJECT_DIR$/predictor-plugin" />
             <option value="$PROJECT_DIR$/predictor-runtime" />
             <option value="$PROJECT_DIR$/sample" />

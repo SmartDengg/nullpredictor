@@ -1,4 +1,4 @@
-package com.smartdengg.nullpredictor.annotation;
+package com.smartdengg.nullpredictor;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -11,7 +11,8 @@ import java.lang.annotation.Target;
  * 作者:  SmartDengg <br>
  * 描述:
  */
-@Retention(RetentionPolicy.RUNTIME) @Target({ ElementType.PARAMETER }) @Inherited
-public @interface MaybeNull {
-  boolean loggable() default false;
+@Retention(RetentionPolicy.RUNTIME) @Target({ ElementType.METHOD }) @Inherited
+public @interface NotNull {
+
+  boolean debug() default false;
 }

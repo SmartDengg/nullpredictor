@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/NotNullPredict.iml" filepath="$PROJECT_DIR$/NotNullPredict.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" filepath="$PROJECT_DIR$/aspect-processor-android/aspect-processor-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nullpredictor-annotation/nullpredictor-annotation.iml" filepath="$PROJECT_DIR$/nullpredictor-annotation/nullpredictor-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nullpredictor-annotations/nullpredictor-annotations.iml" filepath="$PROJECT_DIR$/nullpredictor-annotations/nullpredictor-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/predictor-plugin/predictor-plugin.iml" filepath="$PROJECT_DIR$/predictor-plugin/predictor-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/predictor-runtime/predictor-runtime.iml" filepath="$PROJECT_DIR$/predictor-runtime/predictor-runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />

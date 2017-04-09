@@ -1,0 +1,8 @@
+apply plugin: 'java'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.SmartDengg'
+
+targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_7
+
