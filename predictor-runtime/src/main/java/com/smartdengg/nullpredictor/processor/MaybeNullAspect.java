@@ -32,7 +32,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
   private MaybeNullAspect() {
   }
 
-  @Pointcut("execution(* *(.., @com.smartdengg.nullperdition.annotation.MaybeNull (*), ..))")
+  @Pointcut("execution(* *(.., @com.smartdengg.nullpredictor.MaybeNull (*), ..))")
   public void parameterWithMaybeNull() {
   }
 

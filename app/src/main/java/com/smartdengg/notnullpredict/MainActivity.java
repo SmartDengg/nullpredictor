@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import com.smartdengg.nullperdition.annotation.MaybeNull;
-import com.smartdengg.nullperdition.annotation.NotNull;
+import com.smartdengg.nullpredictor.MaybeNull;
+import com.smartdengg.nullpredictor.NotNull;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         throw new IllegalStateException("---------");
       }
     };
-    //testNotNull(1, "hello world", null, null, null, null, null, null, new Entity());
+    testNotNull(1, "hello world", null, null, null, null, null, null, new Entity());
 
     //checkNullBeforeMethod(null, null);
 

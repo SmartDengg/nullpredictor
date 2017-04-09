@@ -1,10 +1,10 @@
 package com.smartdengg.nullperdition.processor;
 
 import android.util.Log;
-import com.smartdengg.nullperdition.annotation.MaybeNull;
 import com.smartdengg.nullperdition.error.NullError;
 import com.smartdengg.nullperdition.error.UnSupportReturnTypeError;
 import com.smartdengg.nullperdition.internal.Utils;
+import com.smartdengg.nullpredictor.MaybeNull;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,7 +32,7 @@ import static com.smartdengg.nullperdition.internal.Utils.getExceptionStackTrace
   private MaybeNullAspect() {
   }
 
-  @Pointcut("execution(* *(.., @com.smartdengg.nullperdition.annotation.MaybeNull (*), ..))")
+  @Pointcut("execution(* *(.., @com.smartdengg.nullpredictor.MaybeNull (*), ..))")
   public void parameterWithMaybeNull() {
   }
 
