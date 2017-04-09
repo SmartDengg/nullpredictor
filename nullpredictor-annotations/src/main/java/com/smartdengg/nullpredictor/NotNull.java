@@ -11,8 +11,8 @@ import java.lang.annotation.Target;
  * 作者:  SmartDengg <br>
  * 描述:
  */
-@Retention(RetentionPolicy.RUNTIME) @Target({ ElementType.METHOD }) @Inherited
-public @interface NotNull {
+@Retention(RetentionPolicy.RUNTIME) @Target({ ElementType.METHOD, ElementType.CONSTRUCTOR })
+@Inherited public @interface NotNull {
 
-  boolean debug() default false;
+  boolean debug() default true;
 }

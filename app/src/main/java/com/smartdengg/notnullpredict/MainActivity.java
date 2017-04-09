@@ -1,11 +1,9 @@
 package com.smartdengg.notnullpredict;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import com.smartdengg.nullperdition.annotation.MaybeNull;
 import com.smartdengg.nullperdition.annotation.NotNull;
 import java.lang.reflect.Proxy;
@@ -32,20 +30,11 @@ public class MainActivity extends AppCompatActivity {
         throw new IllegalStateException("---------");
       }
     };
-    testNotNull(1, "hello world", null, null, null, null, null, null, new Entity());
+    //testNotNull(1, "hello world", null, null, null, null, null, null, new Entity());
 
     //checkNullBeforeMethod(null, null);
 
-    final ViewGroup viewById = (ViewGroup) findViewById(R.id.layout);
-    viewById.setEnabled(true);
-
-    new Handler().postDelayed(new Runnable() {
-      @Override public void run() {
-        for (int i = 0, n = viewById.getChildCount(); i < n; i++) {
-          viewById.getChildAt(i).setEnabled(false);
-        }
-      }
-    }, 2000);
+    Inner inner = new Inner(null);
   }
 
   //@NotNull(debug = true)
@@ -127,6 +116,15 @@ public class MainActivity extends AppCompatActivity {
     @Override public Object[] onResult(Entity entity) {
 
       return new Object[1];
+    }
+  }
+
+  private static class Inner {
+
+    private Callback callback;
+
+    @NotNull(debug = true) public Inner(Callback callback) {
+      this.callback = callback;
     }
   }
 }

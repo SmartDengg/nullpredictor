@@ -7,4 +7,6 @@ package com.smartdengg.sample;
  */
 
 interface Callback {
+
+  void test();
 }

@@ -32,7 +32,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
   private MaybeNullAspect() {
   }
 
-  @Pointcut("execution(* *(.., @com.smartdengg.nullpredictor.MaybeNull (*), ..))")
+  @Pointcut("execution(* *(.., @com.smartdengg.nullperdition.annotation.MaybeNull (*), ..))")
   public void parameterWithMaybeNull() {
   }
 
@@ -87,7 +87,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
 
         if (returnType.isArray()) return arrayToInstance(returnType);
 
-        if (returnType.isPrimitive()) {
+        if (!(returnType == Void.class) && returnType.isPrimitive()) {
           throw new UnSupportReturnTypeError(
               MessageFormat.format("{0} return type is primitive", instanceName), null,
               getCurrentStackTrace());

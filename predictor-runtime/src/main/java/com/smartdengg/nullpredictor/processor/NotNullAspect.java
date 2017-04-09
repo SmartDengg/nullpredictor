@@ -7,7 +7,7 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
+import org.aspectj.lang.reflect.CodeSignature;
 
 import static com.smartdengg.nullpredictor.internal.Utils.getCurrentStackTrace;
 
@@ -23,19 +23,21 @@ import static com.smartdengg.nullpredictor.internal.Utils.getCurrentStackTrace;
   private NotNullAspect() {
   }
 
-  @Pointcut("@annotation(checker)") public void methodWithNotNull(NotNull checker) {
+  @Pointcut("@annotation(notnullAnno)") public void withNotNullAnnotation(NotNull notnullAnno) {
   }
 
-  @Pointcut("execution(* *(..))") private void atExecution() {
+  @Pointcut("execution(!synthetic *.new(..))") private void atConstructorExecution() {
   }
 
-  @Before(value = "atExecution() && methodWithNotNull(notNullAnno)", argNames = "notNullAnno")
+  @Pointcut("execution(* *(..))") private void atMethodExecution() {
+  }
+
+  @Before(value = "(atConstructorExecution() || atMethodExecution()) && withNotNullAnnotation(notNullAnno)", argNames = "notNullAnno")
   public void beforeMethodExecute(JoinPoint joinPoint, NotNull notNullAnno) {
 
     final Signature signature = joinPoint.getSignature();
-    if (signature instanceof MethodSignature) {
-      final MethodSignature methodSignature = (MethodSignature) signature;
-      final String[] parameterNames = methodSignature.getParameterNames();
+    if (signature instanceof CodeSignature) {
+      final String[] parameterNames = ((CodeSignature) signature).getParameterNames();
 
       Object[] args = joinPoint.getArgs();
       for (int i = 0, n = args.length; i < n; i++) {
