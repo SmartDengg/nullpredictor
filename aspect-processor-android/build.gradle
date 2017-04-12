@@ -37,7 +37,7 @@ android {
 
 dependencies {
   compile 'org.aspectj:aspectjrt:1.8.8'
-  compile project(':nullpredictor-annotations')
+  compile project(':annotations')
 }
 
 android.libraryVariants.all { variant ->
