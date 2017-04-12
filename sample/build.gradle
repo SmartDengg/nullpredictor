@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.smartdengg.nullpredictor'
+//apply plugin: 'com.smartdengg.nullpredictor'
 
 android {
   compileSdkVersion 25
@@ -31,5 +31,5 @@ dependencies {
 
   compile 'com.android.support:appcompat-v7:25.3.0'
   compile 'com.android.support.constraint:constraint-layout:1.0.0'
-  compile 'com.github.SmartDengg.nullpredictor:nullpredictor-annotations:1.0.0'
+//  compile 'com.github.SmartDengg.nullpredictor:nullpredictor-annotations:1.0.0'
 }
