@@ -92,7 +92,6 @@ import static com.smartdengg.nullpredictor.internal.Utils.getExceptionStackTrace
               MessageFormat.format("{0} return type is primitive", instanceName), null,
               getCurrentStackTrace());
         }
-
         return null;
       }
 

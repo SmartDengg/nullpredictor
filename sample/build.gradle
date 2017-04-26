@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'com.smartdengg.nullpredictor'
+apply plugin: 'com.smartdengg.nullpredictor'
 
 android {
   compileSdkVersion 25

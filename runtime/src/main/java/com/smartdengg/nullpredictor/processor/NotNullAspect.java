@@ -23,7 +23,7 @@ import static com.smartdengg.nullpredictor.internal.Utils.getCurrentStackTrace;
   private NotNullAspect() {
   }
 
-  @Pointcut("@annotation(notnullAnno)") public void withNotNullAnnotation(NotNull notnullAnno) {
+  @Pointcut("@annotation(notNull)") public void withNotNullAnnotation(NotNull notNull) {
   }
 
   @Pointcut("execution(!synthetic *.new(..))") private void atConstructorExecution() {

@@ -99,7 +99,7 @@ public class Utils {
   public static StackTraceElement[] getExceptionStackTrace(StackTraceElement[] stackTraceElements) {
 
     int index = 0;
-    final StackTraceElement[] reversedElements = Utils.reverse(new Throwable().getStackTrace());
+    final StackTraceElement[] reversedElements = Utils.reverse(stackTraceElements);
     for (int i = 0, n = reversedElements.length; i < n; i++) {
       if (MaybeNullAspect.class.getName().equals(reversedElements[i].getClassName())) {
         index = i;
